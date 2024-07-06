@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Task App</title>
+	<link rel="stylesheet" href="style.css">
+	<link rel="preconnect" href="https://fonts.googleapis.com">
+	<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+	<link href="https://fonts.googleapis.com/css2?family=Playwrite+ES+Deco:wght@100..400&display=swap" rel="stylesheet">
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css"
+		integrity="sha512-SnH5WK+bZxgPHs44uWIX+LLJAJ9/2PkPKZ5QiAj6Ta86w+fsb2TkcmfRyVX3pBnMFcV7oQPJkl9QevSCWr3W6A=="
+		crossorigin="anonymous" referrerpolicy="no-referrer" />
+
+	<style>
+		.sticky-search {
+			position: sticky;
+			top: 0;
+			z-index: 1000;
+			background-color: white;
+			padding: 10px;
+		}
+	</style>
+</head>
+
+<body class="d-flex">
+	<div class="p-4 border">
+		<h1 class="playwrite-es-deco-400">Get Stuff <span class="text-secondary">Done</span> </h1>
+		<div class="container px-5">
+
+			<form action="#" class="mt-4">
+				<!-- Task Name -->
+				<div class="form-group">
+					<label for="taskName">Task Name</label>
+					<div class="input-group mb-4">
+						<input class="form-control " id="taskName" placeholder="Enter task name" type="text" aria-label="Task Name">
+					</div>
+				</div>
+
+				<!-- Task Description -->
+				<div class="form-group">
+					<label for="taskDescription">Task Description</label>
+					<div class="input-group mb-4">
+						<textarea class="form-control dark-shadow" id="taskDescription" placeholder="Enter task description"
+							aria-label="Task Description"></textarea>
+					</div>
+				</div>
+
+
+				<!-- Due Date -->
+				<div class="form-group">
+					<label for="dueDate">Due Date</label>
+					<div class="input-group mb-4">
+						<input class="form-control" id="dueDate" placeholder="Select due date" type="date" aria-label="Due Date">
+					</div>
+				</div>
+
+				<!-- Priority -->
+				<div class="form-group">
+					<label for="priority">Priority</label>
+					<div class="input-group mb-4">
+						<select class="form-control" id="priority" aria-label="Priority">
+							<option value="low"><i class="fa fa-angle-down"></i> Low</option>
+							<option value="medium"><i class="fa fa-exclamation"></i> Medium</option>
+							<option value="high"><i class="fa-solid fa-triangle-exclamation"></i> High</option>
+						</select>
+					</div>
+				</div>
+
+				<!-- Assigned To -->
+				<div class="form-group">
+					<label for="assignedTo">Assigned To</label>
+					<div class="input-group mb-4">
+						<input class="form-control" id="assignedTo" placeholder="Enter assignee's name" type="text"
+							aria-label="Assigned To">
+					</div>
+				</div>
+
+				<!-- Submit Button -->
+				<button type="submit" class="btn btn-block btn-primary">Add Task</button>
+			</form>
+
+		</div>
+	</div>
+
+	<div class="p-4">
+		<!-- Search Bar -->
+		<div style="max-height: 20vh;">
+			<div class="input-group dark-shadow mb-3">
+				<input type="text" class="form-control" id="search" placeholder="Search Task!" aria-label="Recipient's username"
+					aria-describedby="basic-addon2">
+				<div class="input-group-append">
+					<span class="input-group-text" id="basic-addon2">&nbsp;&nbsp;<i
+							class="fa-solid fa-magnifying-glass"></i>&nbsp;&nbsp;</span>
+				</div>
+			</div>
+			<div class="row justify-content-center">
+				<div class="col-12"> <!-- Full width column -->
+					<div class="btn-group d-flex" role="group" aria-label="Basic example">
+						<button type="button" id="all" data-filter="all" class="active filter-btn btn btn-primary flex-fill"><i
+								class="fas fa-list"></i> All</button>
+						<button type="button" data-filter="pending" class=" filter-btn text-danger btn btn-primary flex-fill"><i
+								class="fas fa-clock"></i>
+							Pending</button>
+						<button type="button" data-filter="completed" class=" filter-btn text-success btn btn-primary flex-fill"><i
+								class="fas fa-check-circle"></i>
+							Completed</button>
+						<button type="button" class="btn btn-primary text-info flex-fill clear-filter-btn">Clear Filter</button>
+					</div>
+				</div>
+			</div>
+			<hr>
+		</div>
+
+		<div class="tasks p-4 shadow-inset rounded" style="max-height: 70vh; overflow-y: auto; overflow-x: hidden; ">
+			<!-- TASKS	 -->
+		</div>
+	</div>
+	<script src="script.js"></script>
+</body>
+
+</html>
